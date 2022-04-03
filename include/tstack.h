@@ -4,9 +4,11 @@
 
 template<typename T, int size>
 class TStack {
+
 private:
   T arr[50];
   int top;
+
 public:
   TStack() : top(-1) {}
   bool isFull() const {
