@@ -15,11 +15,19 @@ int priority(char c) {
   return -1;
 }
 
+bool isDigit(std::string pref) {
+  for (size_t i = 0; i < pref.size(); ++i) {
+    if (pref[i] < '0' || pref[i] > '9')
+      return false;
+  }
+  return true;
+}
+
 std::string infx2pstfx(std::string inf) {
   TStack <char, 50> stack;
   std::string result;
   for (int i = 0; i < inf.size(); i++) {
-    int p = prioryty(inf[i]);
+    int p = priority(inf[i]);
     if (p == -1) {
       if (!result.empty() && priority(inf[i - 1]) != -1) {
         result.push_back(' ');
