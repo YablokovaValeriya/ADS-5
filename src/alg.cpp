@@ -17,7 +17,7 @@ int priority(char c) {
 
 bool isDigit(std::string pref) {
   for (size_t i = 0; i < pref.size(); ++i) {
-    if (pref[i] < '0' || pref[i] > '9')
+    if (pref[i] < "0" || pref[i] > "9")
       return false;
   }
   return true;
@@ -67,7 +67,7 @@ int eval(std::string post) {
   int a = 0, b = 0;
   size_t begin = 0, end = 0;
   for (size_t i = 0; i < post.size(); ++i) {
-    if (post[i] == ' ' || i == post.size()-1) {
+    if (post[i] == " " || i == post.size()-1) {
       end = i;
       if (i ==post.size() - 1)
         end++;
@@ -80,13 +80,13 @@ int eval(std::string post) {
         resStack.pop();
         a = resStack.get();
         resStack.pop();
-        if (temp == '+')
+        if (temp == "+")
           resStack.push(a + b);
-        else if (temp == '-')
+        else if (temp == "-")
           resStack.push(a - b);
-        else if (temp == '*')
+        else if (temp == "*")
           resStack.push(a * b);
-        else if (temp == '/')
+        else if (temp == "/")
           resStack.push(a / b);
       }
     }
