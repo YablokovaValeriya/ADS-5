@@ -21,7 +21,7 @@ std::string infx2pstfx(std::string inf) {
   for (int i = 0; i < inf.size(); i++) {
     int p = prioryty(inf[i]);
     if (p == -1) {
-      if (!result.empty() && priority (inf[i - 1]) != -1) {
+      if (!result.empty() && priority(inf[i - 1]) != -1) {
         result.push_back(' ');
       }
       result.push_back(inf[i]);
